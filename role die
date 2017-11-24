@@ -1,0 +1,15 @@
+input.onButtonPressed(Button.A, () => {
+    basic.showString("Some String")
+})
+input.onButtonPressed(Button.B, () => {
+    basic.showLeds(`
+        . # . # .
+        # # # # #
+        # # # # #
+        . # # # .
+        . . # . .
+        `)
+})
+input.onGesture(Gesture.Shake, () => {
+    basic.showNumber(Math.random(6) + 1)
+})
