@@ -1,0 +1,58 @@
+let kelvin = 0
+let fahrenheit = 0
+let celsius = 0
+input.onButtonPressed(Button.B, () => {
+    basic.pause(100)
+    basic.showNumber(celsius)
+    basic.pause(100)
+    basic.showLeds(`
+        . # . . .
+        # . # . .
+        . # . . .
+        . . . . .
+        . . . . .
+        `)
+    basic.pause(100)
+    basic.showString("C")
+    basic.pause(3000)
+    basic.clearScreen()
+})
+input.onButtonPressed(Button.A, () => {
+    basic.pause(100)
+    basic.showNumber(fahrenheit)
+    basic.pause(100)
+    basic.showLeds(`
+        . # . . .
+        # . # . .
+        . # . . .
+        . . . . .
+        . . . . .
+        `)
+    basic.pause(100)
+    basic.showString("F")
+    basic.pause(3000)
+    basic.clearScreen()
+})
+input.onButtonPressed(Button.AB, () => {
+    basic.pause(100)
+    basic.showNumber(kelvin)
+    basic.pause(100)
+    basic.showString(".15")
+    basic.pause(100)
+    basic.showLeds(`
+        . # . . .
+        # . # . .
+        . # . . .
+        . . . . .
+        . . . . .
+        `)
+    basic.pause(100)
+    basic.showString("K")
+    basic.pause(3000)
+    basic.clearScreen()
+})
+basic.forever(() => {
+    celsius = input.temperature()
+    fahrenheit = celsius * 18 / 10 + 32
+    kelvin = celsius + 273
+})
