@@ -1,0 +1,10 @@
+let Deg_C = 0
+radio.onDataPacketReceived( ({ receivedNumber }) =>  {
+    Deg_C = receivedNumber
+})
+input.onButtonPressed(Button.A, () => {
+    basic.showNumber((Deg_C * 18 + 320) / 10)
+    basic.pause(2000)
+})
+radio.setGroup(1)
+basic.showString("Inside")
