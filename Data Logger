@@ -1,0 +1,15 @@
+bluetooth.onBluetoothConnected(() => {
+    basic.showString("C")
+    bluetooth.startAccelerometerService()
+    bluetooth.startTemperatureService()
+    bluetooth.startMagnetometerService()
+})
+bluetooth.onBluetoothDisconnected(() => {
+    basic.showString("D")
+})
+basic.showString("X")
+basic.forever(() => {
+    bluetooth.startAccelerometerService()
+    bluetooth.startTemperatureService()
+    bluetooth.startMagnetometerService()
+})
