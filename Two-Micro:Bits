@@ -1,0 +1,16 @@
+radio.onDataPacketReceived( ({ receivedNumber }) =>  {
+    if (receivedNumber == 1) {
+        radio.sendNumber(2)
+        basic.showString("<-")
+    }
+    if (receivedNumber == 2) {
+        basic.showString("< ")
+    }
+})
+radio.setGroup(0)
+basic.forever(() => {
+    if (input.buttonIsPressed(Button.A)) {
+        radio.sendNumber(1)
+        basic.pause(300)
+    }
+})
